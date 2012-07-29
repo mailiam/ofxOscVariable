@@ -142,6 +142,9 @@ typedef ofxOscVariablePath_<string> oscStringPath;
 class ofxOscVariable : public ofThread {
 	
   public:
+	~ofxOscVariable(){
+		stopThread();
+	}
 	
 	ofxOscVariablePathBase* getPath(string path){
 		for(int i=0; i<paths.size(); i++){
